@@ -25,17 +25,51 @@ body {
     height: 90%;
     width: 80%;
     min-width: 900px;
-    background-color: #fff;
+    background-image: url(../img/mine.jpg);
+}
+
+
+header {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.avatar {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.avatar img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+
 }
 
 /* LEFT SIDEBAR CONTENT */
 aside.left-sidebar {
     flex-basis: 35%;
-    background-color: red;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
 /* MAIN CHAT CONTENT */
-.open-chat {
+.open-chat-container {
     flex-grow: 1;
-    background: blue;
+    /* background: blue; */
 }
