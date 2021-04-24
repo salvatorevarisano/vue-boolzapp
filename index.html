@@ -14,21 +14,29 @@
     <!-- style -->
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-    <div id="app" class="app-container">
+<body class="flex">
+    <div id="app" class="app-container flex">
         <!-- left sidebar -->
-        <aside class="left-sidebar">
+        <aside class="left-sidebar flex-column">
             <!-- user header -->
             <header class="user-header">
+                <!-- <div class="user">
+                    <button">
+                        <div class="avatar">
+                            <img src="./img/avatar_7.jpg" alt="avatar">
+                        </div>
+                        <div>
+                            Nome Utente
+                        </div>
+                    </button> 
+                </div> -->
                 <div class="user">
                     <div class="avatar">
-                        <!-- <a href="#"> -->
-                            <img src="./img/avatar_7.jpg" alt="avatar">
-                        <!-- </a> -->
+                        <img src="./img/avatar_7.jpg" alt="avatar">
                     </div>
-                    <a href="#">
+                    <div>
                         Nome Utente
-                    </a>
+                    </div>
                 </div>
                 <div class="menu">
                     <a href="#">
@@ -42,39 +50,83 @@
                     </a>
                 </div>
             </header>
+            
+            <!-- notification -->
+            <div class="notification">
+                <div class="badge">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div></div>
+            </div>
 
             <!-- section all chats -->
             <section class="all-chats">
+                <!-- search -->
+                <div class="search">
+                    <input type="submit">
+                    <input type="text">
+                </div>
+
+                <!-- chats-list -->
                 <ul class="chats-list">
                     <li class="user">
                         <div class="avatar">
-                            <!-- <a href="#"> -->
-                                <img src="./img/avatar_7.jpg" alt="avatar">
-                            <!-- </a> -->
+                            <img src="./img/avatar_1.jpg" alt="avatar">
                         </div>
-                        <a href="#">
-                            Nome Utente
-                        </a>
+                        <div>
+                            Michele
+                        </div>
                     </li>
                     <li class="user">
                         <div class="avatar">
-                            <!-- <a href="#"> -->
-                                <img src="./img/avatar_7.jpg" alt="avatar">
-                            <!-- </a> -->
+                            <img src="./img/avatar_2.jpg" alt="avatar">
                         </div>
-                        <a href="#">
-                            Nome Utente
-                        </a>
+                        <div>
+                            Fabio
+                        </div>
                     </li>
                 </ul>
             </section>
         </aside>
 
         <!-- main chat -->
-        <main class="open-chat-container">
+        <main class="chat-container flex-column">
             <header class="chat-header">
-                chat-header
+                <div class="user">
+                    <div class="avatar">
+                        <img src="./img/avatar_7.jpg" alt="avatar">
+                    </div>
+                    <div>
+                        Michele
+                    </div>
+                </div>
+                <div class="menu">
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-paperclip"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                </div>
             </header>
+
+            <!-- open-chat -->
+            <ul class="open-chat">
+                <li class="message sent">
+                    testo del messaggio inviato
+                </li>
+                <li class="message received">
+                    messaggio ricevuto
+                </li>
+            </ul>
+
+            <!-- section typing -->
+            <section class="typing">
+                testo scritto
+            </section>
         </main>
     </div>
     <!-- js -->
