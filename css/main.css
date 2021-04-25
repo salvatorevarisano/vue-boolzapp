@@ -140,9 +140,43 @@ aside.left-sidebar {
     color: #607F90;
 }
 
+/* search */
+.search {
+    padding: 8px;
+    background-color: #FBFBFB ;
+}
+
+.search > * {
+    height: 34px;
+    background-color: #fff;
+    border: 1px solid #F7F7F7;
+}
+.search button {
+    width: 74px;
+    color: #BABABA;
+}
+
+.search input[type="text"] {
+    flex-grow: 1;
+    padding-left: 10px;
+}
+.search input[type="text"]::placeholder {
+    color: #DDDEE0;
+}
+
+/* chats list */
+
 .all-chats {
     flex-grow: 1;
     background-color: #fff;
+}
+
+.chats-list > .user {
+    padding: 10px 20px;
+    border-bottom: 1px solid #F6F6F6;
+}
+.chats-list > .user:last-of-type {
+    border-bottom: none;
 }
 
 /* MAIN CHAT CONTENT */
