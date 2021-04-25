@@ -8,8 +8,6 @@
 
 body {
     height: 100vh;
-    align-items: center;
-    justify-content: center;
     background-image: linear-gradient(
         to bottom,
         #128C7E 0%,
@@ -35,6 +33,10 @@ a {
     color: currentColor;
 }
 
+i {
+    font-size: 1.5rem;
+}
+
 /* UTILITIES */
 /* layout */
 .flex {
@@ -43,6 +45,17 @@ a {
 .flex-column {
     display: flex;
     flex-direction: column;
+}
+
+.flex-row-y-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-row-x-y-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -85,15 +98,17 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.7);
 }
-
+.user .last-access {
+    font-size: 0.8rem;
+    color: #777E81;
+}
 .menu a {
     margin-right: 16px;
 }
 
 .menu i {
-    font-size: 1.5rem;
     color: #BABABA;
 }
 
@@ -110,6 +125,21 @@ aside.left-sidebar {
     background-color: #A5DEFC;
 }
 
+.notification > div:first-of-type {
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+    color: #A5DEFC;
+    background-color: #F5FBFF;
+    border-radius: 50%;
+}
+
+.notification > div:nth-child(2) a {
+    font-size: 0.9rem;
+    text-decoration: underline;
+    color: #607F90;
+}
+
 .all-chats {
     flex-grow: 1;
     background-color: #fff;
@@ -118,16 +148,36 @@ aside.left-sidebar {
 /* MAIN CHAT CONTENT */
 .chat-container {
     flex-grow: 1;
-    background-color: blue;
 }
 
 .chat-container .open-chat {
     flex-grow: 1;
-    background-color:rgba(44, 794, 44, 0.4);
+    padding: 56px 56px 0 99px;
+    overflow-y: auto;
 }
 
+.open-chat .message {
+    width: 320px;
+    margin-bottom: 10px;
+    padding: 18px 16px;
+    border-radius: 15px;
+}
+
+.open-chat .message.sent {
+    align-self: flex-end;
+    /* margin-right: 56px ; */
+    background-color: #DEF9C2;
+}
+
+.open-chat .message.received {
+    /* margin-left: 99px; */
+    background-color: #ffffff;
+}
 
 /* section typing */
 .typing {
     flex-basis: 70px;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+
 }

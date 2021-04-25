@@ -14,7 +14,7 @@
     <!-- style -->
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body class="flex">
+<body class="flex-row-x-y-center">
     <div id="app" class="app-container flex">
         <!-- left sidebar -->
         <aside class="left-sidebar flex-column">
@@ -52,11 +52,14 @@
             </header>
             
             <!-- notification -->
-            <div class="notification">
-                <div class="badge">
+            <div class="notification flex-row-y-center">
+                <div class="flex-row-x-y-center">
                     <i class="fas fa-bell-slash"></i>
                 </div>
-                <div></div>
+                <div class="flex-column">
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <a href="#">Attiva nofiche desktop</a>
+                </div>
             </div>
 
             <!-- section all chats -->
@@ -94,10 +97,11 @@
             <header class="chat-header">
                 <div class="user">
                     <div class="avatar">
-                        <img src="./img/avatar_7.jpg" alt="avatar">
+                        <img src="./img/avatar_1.jpg" alt="avatar">
                     </div>
-                    <div>
-                        Michele
+                    <div class="flex-column">
+                        <div>Michele</div>
+                        <div class="last-access">ultimo accesso oggi alle 10:35 </div>
                     </div>
                 </div>
                 <div class="menu">
@@ -114,18 +118,24 @@
             </header>
 
             <!-- open-chat -->
-            <ul class="open-chat">
+            <ul class="open-chat flex-column">
                 <li class="message sent">
-                    testo del messaggio inviato
+                    testo del messaggio inviato Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia impedit rerum nesciunt nemo vitae praesentium quo vel illum maxime nam dolore, fugiat quae? Sapiente modi ipsam quidem molestias veniam sed.
                 </li>
                 <li class="message received">
-                    messaggio ricevuto
+                    messaggio ricevuto Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore eveniet veniam non accusamus ipsa corporis odio, dolorum consequuntur ut ea rerum sit numquam! Ab expedita nostrum officia inventore doloribus.
+                </li>
+                <li class="message sent">
+                    testo del messaggio inviato Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia impedit rerum nesciunt nemo vitae praesentium quo vel illum maxime nam dolore, fugiat quae? Sapiente modi ipsam quidem molestias veniam sed.
+                </li>
+                <li class="message received">
+                    messaggio ricevuto Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore eveniet veniam non accusamus ipsa corporis odio, dolorum consequuntur ut ea rerum sit numquam! Ab expedita nostrum officia inventore doloribus.
                 </li>
             </ul>
 
             <!-- section typing -->
             <section class="typing">
-                testo scritto
+                <!-- <div id="test" placeholder="test" contenteditable="true"></div> -->
             </section>
         </main>
     </div>
