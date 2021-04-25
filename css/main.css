@@ -24,6 +24,14 @@ body {
     background-image: url(../img/mine.jpg);
 }
 
+input[type="text"] {
+    flex-grow: 1;
+    padding-left: 10px;
+}
+input[type="text"]::placeholder {
+    color: #A8A8A8;
+}
+
 li {
     list-style: none;
 }
@@ -156,14 +164,6 @@ aside.left-sidebar {
     color: #BABABA;
 }
 
-.search input[type="text"] {
-    flex-grow: 1;
-    padding-left: 10px;
-}
-.search input[type="text"]::placeholder {
-    color: #DDDEE0;
-}
-
 /* chats list */
 
 .all-chats {
@@ -212,6 +212,25 @@ aside.left-sidebar {
 .typing {
     flex-basis: 70px;
     flex-shrink: 0;
+    padding: 10px 0;
     background-color: rgba(255, 255, 255, 0.5);
+}
 
+.typing  * {
+    border: none;
+}
+
+.typing div {
+    width: 100px;
+    text-align: center;
+}
+
+.typing button {
+    color: #777E81;
+    background-color: transparent;
+}
+
+.typing input {
+    height: 100%;
+    border-radius: 10px;
 }
