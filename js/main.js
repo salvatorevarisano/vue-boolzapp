@@ -2,7 +2,7 @@ const app = new Vue ({
     el: '#app',
     data: {
         // Elenco contatti
-        yourPropNameHere: [
+        contacts: [
             {
                 name: 'Michele',
                 avatar: '_1',

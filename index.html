@@ -65,11 +65,14 @@
                 <!-- chats-list -->
                 <ul class="chats-list">
                     <li class="user"
-                        v-for="(person, index) in yourPropNameHere" 
+                        v-for="(person, index) in contacts" 
                     >
-                        <div class="avatar">
+                        <div class="avatar flex-row-x-y-center">
                             <img :src="`img/avatar${person.avatar}.jpg`" 
                             :alt="`avatar di ${person.name}`">
+                            <div class="overlay flex-row-x-y-center">
+                                <i class="fas fa-comments"></i>
+                            </div>
                         </div>
                         <div>
                             {{person.name}}
