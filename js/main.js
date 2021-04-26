@@ -22,7 +22,7 @@ const app = new Vue ({
                         date: '10/01/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -87,9 +87,14 @@ const app = new Vue ({
                 ],
             },
         ],
+
+        indexContact: 0,
     },
     methods: {
-
+        setChat(index) {
+            this.indexContact = index;
+            console.log(this.indexContact);
+        },
         
     },
 })

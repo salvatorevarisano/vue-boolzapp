@@ -65,17 +65,19 @@
                 <!-- chats-list -->
                 <ul class="chats-list">
                     <li class="user"
-                        v-for="(person, index) in contacts" 
+                    v-for="(contact, index) in contacts" :key="index"
+                    @click="setChat(index)"
+                    :class="{active : index == indexContact}"
                     >
                         <div class="avatar flex-row-x-y-center">
-                            <img :src="`img/avatar${person.avatar}.jpg`" 
-                            :alt="`avatar di ${person.name}`">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" 
+                            :alt="`avatar di ${contact.name}`">
                             <div class="overlay flex-row-x-y-center">
                                 <i class="fas fa-comments"></i>
                             </div>
                         </div>
                         <div>
-                            {{person.name}}
+                            {{contact.name}}
                         </div>
                     </li>
                 </ul>
@@ -87,10 +89,12 @@
             <header class="chat-header">
                 <div class="user">
                     <div class="avatar">
-                        <img src="./img/avatar_1.jpg" alt="avatar">
+                        <img :src="`img/avatar${contacts[indexContact].avatar}.jpg`" 
+
+                        :alt="`avatar di ${contacts[indexContact].name}`">
                     </div>
                     <div class="flex-column">
-                        <div>Michele</div>
+                        <div>{{contacts[indexContact].name}}</div>
                         <div class="last-access">ultimo accesso oggi alle 10:35 </div>
                     </div>
                 </div>
@@ -109,11 +113,15 @@
 
             <!-- open-chat -->
             <ul class="open-chat flex-column">
-                <li class="message sent">
-                    testo del messaggio inviato Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia impedit rerum nesciunt nemo vitae praesentium quo vel illum maxime nam dolore, fugiat quae? Sapiente modi ipsam quidem molestias veniam sed.
-                    <div class="message-details">25/04/2021 16:00</div>
+                <li class="message"
+                v-for="element in contacts[indexContact].messages"
+                :class="sent : element.status == 'sent'"
+                :class="received :element.status == 'received'"
+                >
+                    {{element.message}}
+                    <div class="message-details">{{element.date}}</div>
                 </li>
-                <li class="message received">
+                <!-- <li class="message received">
                     messaggio ricevuto Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore eveniet veniam non accusamus ipsa corporis odio, dolorum consequuntur ut ea rerum sit numquam! Ab expedita nostrum officia inventore doloribus.
                     <div class="message-details">25/04/2021 16:00</div>
                 </li>
@@ -124,7 +132,7 @@
                 <li class="message received">
                     messaggio ricevuto Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore eveniet veniam non accusamus ipsa corporis odio, dolorum consequuntur ut ea rerum sit numquam! Ab expedita nostrum officia inventore doloribus.
                     <div class="message-details">25/04/2021 16:00</div>
-                </li>
+                </li> -->
             </ul>
 
             <!-- section typing -->
