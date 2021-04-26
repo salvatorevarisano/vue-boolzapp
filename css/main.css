@@ -178,6 +178,7 @@ aside.left-sidebar {
     background-color:rgba(18,140,126, 0.8);
 }
 
+.user .overlay.active,
 .chats-list > .user:hover .overlay {
     display: flex;
 }

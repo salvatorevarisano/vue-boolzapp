@@ -93,7 +93,6 @@ const app = new Vue ({
     methods: {
         setChat(index) {
             this.indexContact = index;
-            console.log(this.indexContact);
         },
         
     },

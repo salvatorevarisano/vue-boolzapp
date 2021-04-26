@@ -67,12 +67,13 @@
                     <li class="user"
                     v-for="(contact, index) in contacts" :key="index"
                     @click="setChat(index)"
-                    :class="{active : index == indexContact}"
+                    
                     >
                         <div class="avatar flex-row-x-y-center">
                             <img :src="`img/avatar${contact.avatar}.jpg`" 
                             :alt="`avatar di ${contact.name}`">
-                            <div class="overlay flex-row-x-y-center">
+                            <div class="overlay flex-row-x-y-center"
+                            :class="{'active' : index == indexContact}">
                                 <i class="fas fa-comments"></i>
                             </div>
                         </div>
@@ -115,24 +116,15 @@
             <ul class="open-chat flex-column">
                 <li class="message"
                 v-for="element in contacts[indexContact].messages"
-                :class="sent : element.status == 'sent'"
-                :class="received :element.status == 'received'"
+                :class="{'sent' : element.status == 'sent','received' : element.status == 'received'}"
                 >
-                    {{element.message}}
-                    <div class="message-details">{{element.date}}</div>
-                </li>
-                <!-- <li class="message received">
-                    messaggio ricevuto Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore eveniet veniam non accusamus ipsa corporis odio, dolorum consequuntur ut ea rerum sit numquam! Ab expedita nostrum officia inventore doloribus.
-                    <div class="message-details">25/04/2021 16:00</div>
-                </li>
-                <li class="message sent">
-                    testo del messaggio inviato Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia impedit rerum nesciunt nemo vitae praesentium quo vel illum maxime nam dolore, fugiat quae? Sapiente modi ipsam quidem molestias veniam sed.
-                    <div class="message-details">25/04/2021 16:00</div>
-                </li>
-                <li class="message received">
-                    messaggio ricevuto Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore eveniet veniam non accusamus ipsa corporis odio, dolorum consequuntur ut ea rerum sit numquam! Ab expedita nostrum officia inventore doloribus.
-                    <div class="message-details">25/04/2021 16:00</div>
-                </li> -->
+                {{element.message}}
+                <div class="message-details">{{element.date}}</div>
+                <!-- :class="[element.status == 'received' ? 'received' : 'sent']"  -->
+            </li> 
+            <!-- .MESSAGE CLASS BIND PRECEDENTE ----------
+            :class="received :element.status == 'received'" -->
+
             </ul>
 
             <!-- section typing -->
@@ -151,4 +143,4 @@
     <!-- js -->
     <script src="js/main.js"></script>
 </body>
-</html>
+</html>        
