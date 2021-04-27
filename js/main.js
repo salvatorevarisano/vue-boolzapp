@@ -110,18 +110,34 @@ const app = new Vue ({
         sentMessages(indexContact) {
             console.log(this.newSentMessage );
             if(this.newSentMessage !== '') {
+                //push il nuobo messaggio nell'array messages
                 this.contacts[indexContact].messages.push({
-                    date: '28/03/2222 10:40:40',
+                    date: '27/04/2021 11:20:30',
                     message: this.newSentMessage,
                     status: 'sent'
                 })
-
                 // reset
                 this.newSentMessage = '';
+                // il contatto risponde 'ok' dopo 1 secondo
+                this.contactResponse();
             } 
-
-
         },
+
+        /**
+         * risposta automatica del contatto
+         */
+        contactResponse() {
+            setTimeout(() => {
+                // il contatto risponde 'ok' dopo 1 secondo
+                this.contacts[this.indexContact].messages.push({
+                    date: '27/04/2021 11:20:31',
+                    message: 'ok',
+                    status: 'received'
+                })
+            }, 1000) 
+        }
+
+
     },
 
 })

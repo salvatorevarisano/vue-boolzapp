@@ -116,7 +116,7 @@
             <ul class="open-chat flex-column">
                 <li class="message"
                 v-for="element in contacts[indexContact].messages"
-                :class="{'sent' : element.status == 'sent','received' : element.status == 'received'}"
+                :class="{sent : element.status == 'sent',received : element.status == 'received'}"
                 >
                 {{element.message}}
                 <div class="message-details">{{element.date}}</div>
