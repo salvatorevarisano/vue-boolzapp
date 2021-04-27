@@ -107,8 +107,20 @@ const app = new Vue ({
          * invia il messaggio al contatto selezionao
          * @param {number} indexContact 
          */
-        sentMessages(indexContact, ) {
-            console.log(this.newSentMessage);
+        sentMessages(indexContact) {
+            console.log(this.newSentMessage );
+            if(this.newSentMessage !== '') {
+                this.contacts[indexContact].messages.push({
+                    date: '28/03/2222 10:40:40',
+                    message: this.newSentMessage,
+                    status: 'sent'
+                })
+
+                // reset
+                this.newSentMessage = '';
+            } 
+
+
         },
     },
 
