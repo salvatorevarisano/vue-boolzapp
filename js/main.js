@@ -28,7 +28,7 @@ const app = new Vue ({
             {
                 name: 'Fabio',
                 avatar: '_2',
-                visible: true,
+                visible:    true,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -90,6 +90,14 @@ const app = new Vue ({
 
         indexContact: 0,
         newSentMessage : '',
+        keyword : '',
+        searchArray: [],
+    },
+
+    mounted: {
+        searchArray = this.contacts.map((element, index)) => {
+            return element.name.toLowerCase()
+        }
     },
 
     methods: {
@@ -135,8 +143,19 @@ const app = new Vue ({
                     status: 'received'
                 })
             }, 1000) 
-        }
+        },
 
+
+        search(keyword) {
+            console.log();
+            console.log(this.searchArray);
+            
+            
+            
+            
+            // reset 
+            this.keyword = '';
+        }
 
     },
 
