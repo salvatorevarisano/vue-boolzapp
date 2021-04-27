@@ -89,11 +89,27 @@ const app = new Vue ({
         ],
 
         indexContact: 0,
+        newSentMessage : '',
     },
+
     methods: {
+
+        /**
+         * apre la chat selezionata
+         * @param {number} index 
+         */
         setChat(index) {
             this.indexContact = index;
         },
         
+
+        /**
+         * invia il messaggio al contatto selezionao
+         * @param {number} indexContact 
+         */
+        sentMessages(indexContact, ) {
+            console.log(this.newSentMessage);
+        },
     },
+
 })
