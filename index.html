@@ -58,14 +58,14 @@
             <section class="all-chats">
                 <!-- search -->
                 <div class="search flex">
-                    <button @click="search(keyword)" ><i class="fas fa-search"></i></button>
-                    <input type="text" v-model.trim="keyword" @keyup.enter="search()" placeholder="Cerca o inizia una nuova chat">
+                    <button @click="search()" ><i class="fas fa-search"></i></button>
+                    <input type="text" v-model.trim="keyword" @keyup="search()" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
                 <!-- chats-list -->
                 <ul class="chats-list">
                     <li class="user"
-                    v-for="(contact, index) in contacts" :key="index"
+                    v-for="(contact, index) in searchArray" :key="index"
                     @click="setChat(index)"
                     
                     >

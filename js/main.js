@@ -94,10 +94,8 @@ const app = new Vue ({
         searchArray: [],
     },
 
-    mounted: {
-        searchArray = this.contacts.map((element, index)) => {
-            return element.name.toLowerCase()
-        }
+    mounted(){
+        this.search()
     },
 
     methods: {
@@ -146,15 +144,17 @@ const app = new Vue ({
         },
 
 
-        search(keyword) {
-            console.log();
+        search() {
+            if(this.keyword.length > 0) {
+                this.searchArray = this.contacts.filter(element => {
+                    return element.name.toLowerCase().includes(this.keyword.toLowerCase())
+                    
+                });
+            } else {
+                this.searchArray = this.contacts
+            }
+            
             console.log(this.searchArray);
-            
-            
-            
-            
-            // reset 
-            this.keyword = '';
         }
 
     },
