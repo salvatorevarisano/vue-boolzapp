@@ -65,7 +65,7 @@
                 <!-- chats-list -->
                 <ul class="chats-list">
                     <li class="user"
-                    v-for="(contact, index) in searchArray" :key="index"
+                    v-for="(contact, index) in filteredArray" :key="index"
                     @click="setChat(index)"
                     
                     >

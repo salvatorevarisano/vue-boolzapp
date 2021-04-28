@@ -91,11 +91,11 @@ const app = new Vue ({
         indexContact: 0,
         newSentMessage : '',
         keyword : '',
-        searchArray: [],
+        filteredArray : [],
     },
-
-    mounted(){
-        this.search()
+    //fa vedere filteredArray 
+    mounted() {
+        this.search();
     },
 
     methods: {
@@ -143,19 +143,21 @@ const app = new Vue ({
             }, 1000) 
         },
 
-
+        
         search() {
             if(this.keyword.length > 0) {
-                this.searchArray = this.contacts.filter(element => {
+                this.filteredArray = this.contacts.filter(element => {
                     return element.name.toLowerCase().includes(this.keyword.toLowerCase())
                     
                 });
             } else {
-                this.searchArray = this.contacts
+                this.filteredArray = this.contacts;
             }
             
-            console.log(this.searchArray);
-        }
+            console.log(this.filteredArray, 'filteredArray')
+            console.log(this.contacts, 'contacts')
+
+       }
 
     },
 
