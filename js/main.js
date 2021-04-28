@@ -1,3 +1,6 @@
+// DAYJS PLUGINS
+dayjs.extend(dayjs_plugin_customParseFormat);
+
 const app = new Vue ({
     el: '#app',
     data: {
@@ -118,7 +121,7 @@ const app = new Vue ({
             if(this.newSentMessage !== '') {
                 //push il nuobo messaggio nell'array messages
                 this.contacts[indexContact].messages.push({
-                    date: '27/04/2021 11:20:30',
+                    date: this.currentDate(),
                     message: this.newSentMessage,
                     status: 'sent'
                 })
@@ -136,28 +139,31 @@ const app = new Vue ({
             setTimeout(() => {
                 // il contatto risponde 'ok' dopo 1 secondo
                 this.contacts[this.indexContact].messages.push({
-                    date: '27/04/2021 11:20:31',
+                    date: this.currentDate(),
                     message: 'ok',
                     status: 'received'
                 })
             }, 1000) 
         },
 
-        
+        /**
+         * cerca la keyword inserita e fa vedere i contatti che la contengono
+         */
         search() {
             if(this.keyword.length > 0) {
                 this.filteredArray = this.contacts.filter(element => {
                     return element.name.toLowerCase().includes(this.keyword.toLowerCase())
-                    
                 });
             } else {
                 this.filteredArray = this.contacts;
             }
-            
-            console.log(this.filteredArray, 'filteredArray')
-            console.log(this.contacts, 'contacts')
 
-       }
+       },
+
+       currentDate = () => {
+           return dayjs().format('DD/MM/YYYY hh:mm:ss')
+        },
+
 
     },
 

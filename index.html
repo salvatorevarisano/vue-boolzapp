@@ -118,13 +118,9 @@
                 v-for="element in contacts[indexContact].messages"
                 :class="{sent : element.status == 'sent',received : element.status == 'received'}"
                 >
-                {{element.message}}
-                <div class="message-details">{{element.date}}</div>
-                <!-- :class="[element.status == 'received' ? 'received' : 'sent']"  -->
-            </li> 
-            <!-- .MESSAGE CLASS BIND PRECEDENTE ----------
-            :class="received :element.status == 'received'" -->
-
+                    {{element.message}}
+                    <div class="message-details">{{element.date}}</div>
+                </li> 
             </ul>
 
             <!-- section typing -->
@@ -136,10 +132,13 @@
                 <div>
                     <button><i class="fas fa-microphone"></i></button>
                 </div>
-                <!-- <div id="test" contenteditable="true"></div> -->
             </section>
         </main>
     </div>
+    <!-- day js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+    <!-- plugin day js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/plugin/customParseFormat.js"></script>
     <!-- js -->
     <script src="js/main.js"></script>
 </body>
