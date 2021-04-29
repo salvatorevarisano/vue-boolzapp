@@ -95,10 +95,17 @@ const app = new Vue ({
         newSentMessage : '',
         keyword : '',
         filteredArray : [],
+        //lastAccess : this.contacts[this.indexContact].messages[this.contacts[this.indexContact].messages.length - 1].date,
+        // contacts[indexContact].messages[contacts[indexContact].messages.length - 1].date
     },
+
     //fa vedere filteredArray 
     mounted() {
         this.search();
+        //console.log(this.lastAccess);
+
+
+
     },
 
     methods: {
@@ -117,7 +124,7 @@ const app = new Vue ({
          * @param {number} indexContact 
          */
         sentMessages(indexContact) {
-            console.log(this.newSentMessage );
+            //console.log(this.newSentMessage );
             if(this.newSentMessage !== '') {
                 //push il nuobo messaggio nell'array messages
                 this.contacts[indexContact].messages.push({
@@ -160,9 +167,7 @@ const app = new Vue ({
 
        },
 
-       currentDate = () => {
-           return dayjs().format('DD/MM/YYYY hh:mm:ss')
-        },
+       currentDate: () => dayjs().format('DD/MM/YYYY hh:mm:ss'),
 
 
     },
