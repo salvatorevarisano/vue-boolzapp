@@ -95,14 +95,17 @@ const app = new Vue ({
         newSentMessage : '',
         keyword : '',
         filteredArray : [],
-        //lastAccess : this.contacts[this.indexContact].messages[this.contacts[this.indexContact].messages.length - 1].date,
+        lastAccess : ''
         // contacts[indexContact].messages[contacts[indexContact].messages.length - 1].date
     },
 
+    computed: {
+
+    },
     //fa vedere filteredArray 
     mounted() {
         this.search();
-        //console.log(this.lastAccess);
+        // console.log(this.lastAccess);
 
 
 
@@ -163,11 +166,16 @@ const app = new Vue ({
                 });
             } else {
                 this.filteredArray = this.contacts;
+
             }
 
        },
 
        currentDate: () => dayjs().format('DD/MM/YYYY hh:mm:ss'),
+
+       getLastAcces () {
+        return this.contacts[this.indexContact].messages[this.contacts[this.indexContact].messages.length - 1].date
+       }
 
 
     },
